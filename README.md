@@ -1,3 +1,10 @@
+/*
+ * MQTTManager - Bibliothek zur Verwaltung von MQTT-Verbindungen
+ * Erstellt von [P_Seminar], [16.04.2024]
+ * Copyright (c) [2024] [P_Seminar]
+ * Freigegeben unter der MIT-Lizenz. All rights reserved.
+ */
+
 # MQTTManager Bibliothek
 
 Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindungen in Ihren Arduino-Projekten.
@@ -31,6 +38,6 @@ Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Bei
 
 ## Lizenz
 
-Diese Bibliothek ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der mitgelieferten Lizenzdatei.
+Diese Bibliothek ist unter der MIT-Lizenz lizenziert. 
 
 Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden Repository.
