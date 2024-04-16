@@ -6,7 +6,7 @@ Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindu
 
 1. Besuchen Sie das GitHub-Repository der MQTTManager-Bibliothek.
 
-2. Klicken Sie auf den grünen Button "Code" und wählen Sie "Download ZIP".
+2. Klicken Sie links auf Releases und dann klicken Sie unter Assets auf MQTTManager.zip .
 
 3. Extrahieren Sie die heruntergeladene ZIP-Datei an einen beliebigen Ort.
 
