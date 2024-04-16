@@ -1,34 +1,36 @@
-MQTTManager Bibliothek
+# MQTTManager Bibliothek
 
-MQTTManager Bibliothek zum Verwalten von MQTT Verbindungen.
+Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindungen in Ihren Arduino-Projekten.
 
-Installation:
+## Installation
 
-    Besuchen Sie das GitHub-Repository der MQTTManager-Bibliothek.
+1. Besuchen Sie das GitHub-Repository der MQTTManager-Bibliothek.
 
-    Klicken Sie auf den grünen Button "Code" und wählen Sie "Download ZIP".
+2. Klicken Sie auf den grünen Button "Code" und wählen Sie "Download ZIP".
 
-    Starten Sie die Arduino IDE.
+3. Extrahieren Sie die heruntergeladene ZIP-Datei an einen beliebigen Ort.
 
-    Gehen Sie zu "Sketch" -> "Include Library" -> "Add .ZIP Library...".
+4. Starten Sie die Arduino IDE.
 
-    Navigieren Sie zu dem Ort, an dem Sie die ZIP-Datei heruntergeladen haben, wählen Sie sie aus und klicken Sie auf "Öffnen".
+5. Gehen Sie zu "Sketch" -> "Include Library" -> "Add .ZIP Library...".
 
-    Die Bibliothek sollte jetzt installiert sein.
+6. Navigieren Sie zum Speicherort der extrahierten ZIP-Datei, wählen Sie sie aus und klicken Sie auf "Öffnen".
 
+Die Bibliothek sollte nun installiert sein.
 
-Verwendung
+## Verwendung
 
-Nach der Installation können Sie die MQTTManager-Bibliothek in Ihren Sketchen verwenden, indem Sie sie wie folgt einbinden:
+Nach der Installation können Sie die MQTTManager-Bibliothek in Ihren Sketchen wie folgt einbinden:
 
-cpp
-
+```cpp
 #include <MQTTManager.h>
+```
 
-Weitere Informationen zur Verwendung der Bibliothek finden Sie in den Beispielen und der Dokumentation im GitHub-Repository.
+Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Beispiele und die Dokumentation im GitHub-Repository zugreifen.
 
-Lizenz
+
+## Lizenz
 
 Diese Bibliothek ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der mitgelieferten Lizenzdatei.
 
-Erstelle bei Fehler, Fragen etc. einen Issue im Respository.
+Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden Repository.
