@@ -14,7 +14,9 @@ Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindu
 
 5. Gehen Sie zu "Sketch" -> "Include Library" -> "Add .ZIP Library...".
 
-6. Navigieren Sie zum Speicherort der extrahierten ZIP-Datei, wählen Sie sie aus und klicken Sie auf "Öffnen".
+   ![image](https://techatronic.com/wp-content/uploads/2021/06/Library_Process_1.png)
+
+7. Navigieren Sie zum Speicherort der extrahierten ZIP-Datei, wählen Sie sie aus und klicken Sie auf "Öffnen".
 
 Die Bibliothek sollte nun installiert sein.
 
