@@ -8,15 +8,13 @@ Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindu
 
 2. Klicken Sie links auf Releases und dann klicken Sie unter Assets auf MQTTManager.zip .
 
-3. Extrahieren Sie die heruntergeladene ZIP-Datei an einen beliebigen Ort.
+3. Starten Sie die Arduino IDE.
 
-4. Starten Sie die Arduino IDE.
-
-5. Gehen Sie zu "Sketch" -> "Include Library" -> "Add .ZIP Library...".
+4. Gehen Sie zu "Sketch" -> "Include Library" -> "Add .ZIP Library...".
 
    ![image](https://techatronic.com/wp-content/uploads/2021/06/Library_Process_1.png)
 
-7. Navigieren Sie zum Speicherort der extrahierten ZIP-Datei, wählen Sie sie aus und klicken Sie auf "Öffnen".
+5. Navigieren Sie zum Speicherort der extrahierten ZIP-Datei, wählen Sie sie aus und klicken Sie auf "Öffnen".
 
 Die Bibliothek sollte nun installiert sein.
 
