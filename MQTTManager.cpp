@@ -1,3 +1,10 @@
+/*
+ * MQTTManager.h - Bibliothek zur Verwaltung von MQTT-Verbindungen
+ * Erstellt von [Ihr Name], [16.04.2024]
+ * Copyright (c) [2024] [Ihr Name]
+ * Freigegeben unter der MIT-Lizenz. All rights reserved.
+ */
+
 #include "MQTTManager.h"
 
 MQTTManager::MQTTManager(char* ssid, char* password, char* mqtt_broker, char* mqtt_username, char* mqtt_password, int mqtt_port, char* topic, char* name, int& lightmode, bool debug, int qos, bool retain)
@@ -12,6 +19,7 @@ MQTTManager::~MQTTManager() {
 }
 
 void MQTTManager::connect() {
+  checkForUpdate();
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -44,6 +52,7 @@ void MQTTManager::checkForUpdate() {
       debugPrint("Update available! Please update the library.");
     } else {
       update_available = false;
+
       debugPrint("Library is up to date.");
     }
   } else {
@@ -85,7 +94,7 @@ void MQTTManager::callback(char* topic, byte* payload, unsigned int length) {
   if (debug_mode) { Serial.println(); }
   if (debug_mode) { Serial.println("-----------------------"); }
 
-  processMessage(topic, (char*)payload);
+  //processMessage(topic, (char*)payload);
 }
 
 void MQTTManager::processMessage(const char* topic, const char* payload) {

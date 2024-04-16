@@ -1,3 +1,10 @@
+/*
+ * MQTTManager.h - Bibliothek zur Verwaltung von MQTT-Verbindungen
+ * Erstellt von [Ihr Name], [16.04.2024]
+ * Copyright (c) [2024] [Ihr Name]
+ * Freigegeben unter der MIT-Lizenz. All rights reserved.
+ */
+
 #ifndef MQTTMANAGER_H
 #define MQTTMANAGER_H
 
@@ -69,6 +76,10 @@ class MQTTManager {
 
     bool isUpdateAvailable() {
       return update_available;
+    }
+
+    void setCallback(void (*callback)(char*, byte*, unsigned int)) {
+        client.setCallback(callback);
     }
 
     void connect();
