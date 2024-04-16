@@ -26,14 +26,14 @@ Nach der Installation können Sie die MQTTManager-Bibliothek in Ihren Sketchen w
 #include <MQTTManager.h>
 ```
 
-Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Beispiele und die Dokumentation im GitHub-Repository zugreifen.
+Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Beispiele und die Dokumentation im [GitHub-Repository](https://github.com/ShadowRock345/ExampleSketches) zugreifen.
 
 
 ## Lizenz
 
 Diese Bibliothek ist unter der MIT-Lizenz lizenziert. 
 
-Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden [Repository](https://github.com/ShadowRock345/ExampleSketches).
+Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden [Repository](https://github.com/ShadowRock345/MQTTManager).
 
 
  * MQTTManager - Bibliothek zur Verwaltung von MQTT-Verbindungen
