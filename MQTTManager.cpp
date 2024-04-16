@@ -1,7 +1,7 @@
 /*
- * MQTTManager.h - Bibliothek zur Verwaltung von MQTT-Verbindungen
- * Erstellt von [Ihr Name], [16.04.2024]
- * Copyright (c) [2024] [Ihr Name]
+ * MQTTManager.cpp - Bibliothek zur Verwaltung von MQTT-Verbindungen
+ * Erstellt von [P_Seminar], [16.04.2024]
+ * Copyright (c) [2024] [P_Seminar]
  * Freigegeben unter der MIT-Lizenz. All rights reserved.
  */
 
@@ -10,7 +10,7 @@
 MQTTManager::MQTTManager(char* ssid, char* password, char* mqtt_broker, char* mqtt_username, char* mqtt_password, int mqtt_port, char* topic, char* name, int& lightmode, bool debug, int qos, bool retain)
   : ssid(ssid), password(password), mqtt_broker(mqtt_broker), mqtt_username(mqtt_username), mqtt_password(mqtt_password), mqtt_port(mqtt_port), topic(topic), name(name), client(espClient), lightmode(lightmode), debug_mode(debug), qos_level(qos), retain_flag(retain), update_available(false) {
     current_version = "1.0.0";
-    checkForUpdate();
+    
   }
 
 MQTTManager::~MQTTManager() {
@@ -19,13 +19,13 @@ MQTTManager::~MQTTManager() {
 }
 
 void MQTTManager::connect() {
-  checkForUpdate();
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     if (debug_mode) { Serial.println("Connecting to WiFi.."); }
   }
   if (debug_mode) { Serial.println("Connected to the Wi-Fi network"); }
+  checkForUpdate();
   
   // mit broker verbinden
   client.setServer(mqtt_broker, mqtt_port);

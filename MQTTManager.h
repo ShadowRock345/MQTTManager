@@ -1,7 +1,7 @@
 /*
  * MQTTManager.h - Bibliothek zur Verwaltung von MQTT-Verbindungen
- * Erstellt von [Ihr Name], [16.04.2024]
- * Copyright (c) [2024] [Ihr Name]
+ * Erstellt von [P_Seminar], [16.04.2024]
+ * Copyright (c) [2024] [P_Seminar]
  * Freigegeben unter der MIT-Lizenz. All rights reserved.
  */
 
