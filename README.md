@@ -33,7 +33,7 @@ Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Bei
 
 Diese Bibliothek ist unter der MIT-Lizenz lizenziert. 
 
-Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden Repository.
+Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden [Repository](https://github.com/ShadowRock345/ExampleSketches).
 
 
  * MQTTManager - Bibliothek zur Verwaltung von MQTT-Verbindungen
