@@ -1,3 +1,6 @@
+// created: 17.04.2024
+// license: MIT
+
 //libs
 #ifdef __AVR__
 #include <avr/power.h> 

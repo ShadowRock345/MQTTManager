@@ -1,3 +1,6 @@
+// created: 17.04.2024
+// license: MIT
+
 //libs
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
