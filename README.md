@@ -1,20 +1,17 @@
 # MQTTManager Bibliothek
 
-Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindungen in Ihren Arduino-Projekten.
-
+Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindungen.
 ## Installation
 
-1. Besuchen Sie das GitHub-Repository der MQTTManager-Bibliothek.
+1. Klicken Sie links auf Releases und dann klicken Sie unter Assets auf MQTTManager.zip .
 
-2. Klicken Sie auf den grünen Button "Code" und wählen Sie "Download ZIP".
+2. Starten Sie die Arduino IDE.
 
-3. Extrahieren Sie die heruntergeladene ZIP-Datei an einen beliebigen Ort.
+3. Gehen Sie zu "Sketch" -> "Include Library" -> "Add .ZIP Library...".
 
-4. Starten Sie die Arduino IDE.
+   ![image](https://techatronic.com/wp-content/uploads/2021/06/Library_Process_1.png)
 
-5. Gehen Sie zu "Sketch" -> "Include Library" -> "Add .ZIP Library...".
-
-6. Navigieren Sie zum Speicherort der extrahierten ZIP-Datei, wählen Sie sie aus und klicken Sie auf "Öffnen".
+4. Navigieren Sie zum Speicherort der extrahierten ZIP-Datei, wählen Sie sie aus und klicken Sie auf "Öffnen".
 
 Die Bibliothek sollte nun installiert sein.
 
@@ -26,14 +23,14 @@ Nach der Installation können Sie die MQTTManager-Bibliothek in Ihren Sketchen w
 #include <MQTTManager.h>
 ```
 
-Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Beispiele und die Dokumentation im GitHub-Repository zugreifen.
+Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Beispiele und die Dokumentation im [GitHub-Repository](https://github.com/ShadowRock345/ExampleSketches) zugreifen.
 
 
 ## Lizenz
 
 Diese Bibliothek ist unter der MIT-Lizenz lizenziert. 
 
-Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden Repository.
+Bei Fragen oder Problemen erstellen Sie bitte ein Issue im entsprechenden [Repository](https://github.com/ShadowRock345/MQTTManager).
 
 
  * MQTTManager - Bibliothek zur Verwaltung von MQTT-Verbindungen
