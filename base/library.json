@@ -1,0 +1,24 @@
+{
+    "name": "MQTTManager",
+    "keywords": "mqtt, http, web",
+    "description": "A simple library to manage MQTT Connections",
+    "homepage": "https://github.com/ShadowRock345/MQTTManager/",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ShadowRock345/MQTTManager.git"
+    },
+    "version": "1.0.2",
+    "authors": {
+      "name": "P-Seminar",
+      "url": "https://www.fallingfalling.com/"
+    },
+    "export": {
+      "include": ["src", "examples", "LICENSE.txt", "MQTTManager.h"]
+    },
+    "frameworks": "*",
+    "platforms": "*",
+    "build": {
+      "libArchive": false
+    }
+  }
+  
