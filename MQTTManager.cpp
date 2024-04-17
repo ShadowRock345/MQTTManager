@@ -7,9 +7,9 @@
 
 #include "MQTTManager.h"
 
-MQTTManager::MQTTManager(char* ssid, char* password, char* mqtt_broker, char* mqtt_username, char* mqtt_password, int mqtt_port, char* topic, char* name, int& lightmode, bool debug, int qos, bool retain)
-  : ssid(ssid), password(password), mqtt_broker(mqtt_broker), mqtt_username(mqtt_username), mqtt_password(mqtt_password), mqtt_port(mqtt_port), topic(topic), name(name), client(espClient), lightmode(lightmode), debug_mode(debug), qos_level(qos), retain_flag(retain), update_available(false) {
-    current_version = "1.0.0";
+MQTTManager::MQTTManager(char* ssid, char* password, char* mqtt_broker, char* mqtt_username, char* mqtt_password, int mqtt_port, char* topic, char* name, bool debug, int qos, bool retain) //, int& lightmode
+  : ssid(ssid), password(password), mqtt_broker(mqtt_broker), mqtt_username(mqtt_username), mqtt_password(mqtt_password), mqtt_port(mqtt_port), topic(topic), name(name), client(espClient), debug_mode(debug), qos_level(qos), retain_flag(retain), update_available(false) { //, lightmode(lightmode)
+    current_version = "1.0.1";
     
   }
 
@@ -22,9 +22,9 @@ void MQTTManager::connect() {
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    if (debug_mode) { Serial.println("Connecting to WiFi.."); }
+    debugPrint("Connecting to WiFi..");
   }
-  if (debug_mode) { Serial.println("Connected to the Wi-Fi network"); }
+  debugPrint("Connected to the Wi-Fi network");
   checkForUpdate();
   
   // mit broker verbinden
@@ -32,7 +32,7 @@ void MQTTManager::connect() {
   client.setCallback([this](char* topic, byte* payload, unsigned int length) {
     this->callback(topic, payload, length);
   });
-  reconnect();
+  reconnect(); //starten der verbindung
 }
 
 void MQTTManager::checkForUpdate() {
@@ -49,14 +49,19 @@ void MQTTManager::checkForUpdate() {
     
     if (latest_version != current_version) {
       update_available = true;
+      debugPrint("--------------------------------------------");
       debugPrint("Update available! Please update the library.");
+      debugPrint("--------------------------------------------");
     } else {
       update_available = false;
-
+      debugPrint("--------------------------------------------");
       debugPrint("Library is up to date.");
+      debugPrint("--------------------------------------------");
     }
   } else {
+    debugPrint("--------------------------------------------");
     debugPrint("Failed to check for updates.");
+    debugPrint("--------------------------------------------");
   }
 
   http.end();
@@ -64,16 +69,16 @@ void MQTTManager::checkForUpdate() {
 
 void MQTTManager::publish(const char* topic, const char* payload) {
   if (!client.connected()) {
-    if (debug_mode) { Serial.println("Error: MQTT client is not connected! Reconnecting..."); }
+    debugPrint("Error: MQTT client is not connected! Reconnecting...");
     reconnect();
   }
 
   if (!client.publish(topic, payload)) {
-    if (debug_mode) { Serial.println("Error: Failed to publish message"); }
+    debugPrint("Error: Failed to publish message"); 
     return;
   }
 
-  Serial.println("Message published successfully");
+  debugPrint("Message published successfully");
 }
 
 void MQTTManager::loop() {
@@ -84,32 +89,40 @@ void MQTTManager::loop() {
 }
 
 void MQTTManager::callback(char* topic, byte* payload, unsigned int length) {
-  if (debug_mode) { Serial.print("Message arrived in topic: "); }
-  if (debug_mode) { Serial.println(topic); }
-  if (debug_mode) { Serial.print("Message: "); }
+  Serial.println("Message arrived in topic: "); 
+  Serial.println(topic);
+  Serial.println("Message: ");
   for (int i = 0; i < length; i++) {
-    if (debug_mode) { Serial.print((char) payload[i]); }
-    
+    Serial.println(((char) payload[i]));
   }
-  if (debug_mode) { Serial.println(); }
-  if (debug_mode) { Serial.println("-----------------------"); }
+  Serial.println("");
+  Serial.println("-----------------------"); 
 
-  //processMessage(topic, (char*)payload);
+  //processMessage(topic, (char*)payload); //example processing
 }
 
 void MQTTManager::processMessage(const char* topic, const char* payload) {
   StaticJsonDocument<200> doc;
-  deserializeJson(doc, payload);
+  DeserializationError error = deserializeJson(doc, payload);
+  if (error) {
+    debugPrint("Failed to deserialize JSON");
+    return;
+  }
+
   const char* command = doc["command"];
+  if (!command) {
+    debugPrint("Command not found in JSON payload");
+    return;
+  }
 
   if (strcmp(command, "toggle_mode") == 0) {
     // Beispiel: effekt toggeln
-    if (debug_mode) { Serial.println("Toggle light mode command received"); }
-    if (lightmode >= 10) {
-      lightmode = 0;
-    } else {
-      lightmode += 1;
-    }
+    debugPrint("Toggle light mode command received");
+    //if (lightmode >= 10) {
+    //  lightmode = 0;
+    //} else {
+    //  lightmode += 1;
+    //}
   }
   //genauso für weitere commands
 }
@@ -121,7 +134,7 @@ void MQTTManager::reconnect() {
     if (debug_mode) { Serial.printf("The client %s connects to the MQTT broker\n", client_id.c_str()); }
     
     if (client.connect(client_id.c_str(), mqtt_username, mqtt_password, NULL, qos_level, retain_flag, NULL, true)) {
-      if (debug_mode) { Serial.println("MQTT broker connected"); }
+      debugPrint("MQTT broker connected");
       String message = "Client [";
       message += name;
       message += "] connected!"; 

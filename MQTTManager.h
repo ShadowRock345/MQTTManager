@@ -33,10 +33,10 @@ class MQTTManager {
     String latest_version; 
     bool update_available;
 
-    int& lightmode; //beispielhaft
+    //int& lightmode; //beispielhaft als shared vartiable zwischen bibliothek und main klasse
 
   public:
-    MQTTManager(char* ssid, char* password, char* mqtt_broker, char* mqtt_username, char* mqtt_password, int mqtt_port, char* topic, char* name, int& lightmode, bool debug = true, int qos = 0, bool retain = false);
+    MQTTManager(char* ssid, char* password, char* mqtt_broker, char* mqtt_username, char* mqtt_password, int mqtt_port, char* topic, char* name, bool debug = true, int qos = 0, bool retain = false); //, int& lightmode
     MQTTManager(const MQTTManager&) = delete; //kopieren unterbinden
     MQTTManager& operator=(const MQTTManager&) = delete; //zuweisen unterbinden
     MQTTManager(MQTTManager&&) = delete; //verschieben unterbinden
