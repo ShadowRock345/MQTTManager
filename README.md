@@ -25,6 +25,11 @@ Nach der Installation können Sie die MQTTManager-Bibliothek in Ihren Sketchen w
 
 Für weitere Informationen zur Verwendung der Bibliothek können Sie auf die Beispiele und die Dokumentation im [GitHub-Repository](https://github.com/ShadowRock345/ExampleSketches) zugreifen.
 
+##
+
+<ins>Die Beispiele für die Bibliothek sind auch verfügbar unter</ins>:  Arduino-IDE -> File/Datei -> Examples/Beispiele -> MQTTManager
+
+##
 
 ## Lizenz
 
