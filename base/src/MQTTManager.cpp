@@ -9,7 +9,7 @@
 
 MQTTManager::MQTTManager(char* ssid, char* password, char* mqtt_broker, char* mqtt_username, char* mqtt_password, int mqtt_port, char* topic, char* name, bool debug, int qos, bool retain) //, int& lightmode
   : ssid(ssid), password(password), mqtt_broker(mqtt_broker), mqtt_username(mqtt_username), mqtt_password(mqtt_password), mqtt_port(mqtt_port), topic(topic), name(name), client(espClient), debug_mode(debug), qos_level(qos), retain_flag(retain), update_available(false) { //, lightmode(lightmode)
-    current_version = "1.0.1";
+    current_version = "1.0.2";
     
   }
 
