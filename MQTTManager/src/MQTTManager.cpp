@@ -25,7 +25,7 @@ void MQTTManager::connect() {
     debugPrint("Connecting to WiFi..");
   }
   debugPrint("Connected to the Wi-Fi network");
-  checkForUpdate();
+  if (debug_mode) { checkForUpdate(); }
   
   // mit broker verbinden
   client.setServer(mqtt_broker, mqtt_port);
