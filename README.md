@@ -3,7 +3,7 @@
 Die MQTTManager Bibliothek ermöglicht die einfache Verwaltung von MQTT-Verbindungen.
 ## Installation
 
-1. Klicken Sie links auf Releases und dann klicken Sie unter Assets auf MQTTManager.zip .
+1. Klicken Sie links auf Releases und dann klicken Sie unter Assets auf MQTTManager.zip.
 
 2. Starten Sie die Arduino IDE.
 
